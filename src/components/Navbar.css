@@ -1,0 +1,26 @@
+.nav-link {
+  position: fixed;
+  top: 4%;
+  display: flex;
+  align-items: center;
+  left: 500px;
+}
+
+.linkk > a {
+  margin-right: 80px;
+  
+}
+
+.button-right {
+  position: fixed;
+  top: 3%;
+  right: 1%;
+}
+
+.nav-logo {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  align-items: center;
+  display: flex;
+}
