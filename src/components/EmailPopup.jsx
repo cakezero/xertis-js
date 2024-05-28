@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
-import {
-  useEmbeddedWallet,
-} from "@thirdweb-dev/react";
-import { Spinner, Cancel } from '../js/icons'
+import { useEmbeddedWallet } from "@thirdweb-dev/react";
+import { Spinner, Cancel } from "../js/icons";
+// import { authEmail } from '../magic/authEmail'
 
 // eslint-disable-next-line react/prop-types
 export default function EmailPopup({ close }) {
@@ -23,26 +22,31 @@ export default function EmailPopup({ close }) {
 
   const SendOTP = async () => {
     if (!emailInput) {
-      alert('Email Address field cannot be empty!');
+      alert("Email Address field cannot be empty!");
       return;
     }
-    console.log('Hit!')
-    setSubmit(true)
+    console.log("Hit!");
+    setSubmit(true);
     await sendVerificationEmail({ email: emailInput });
-    console.log('Hit again!')
-    setState('code_sent')
-    setSubmit(false)
+    console.log("Hit again!");
+    setState("code_sent");
+    setSubmit(false);
   };
 
   const handleLogin = async () => {
-    setSubmit(true)
+    if (!verificationCode) {
+      alert("Enter verification code!");
+      return;
+    }
+    setSubmit(true);
     // verify email and connect
     await connect({
       strategy: "email_verification",
       email: emailInput,
       verificationCode,
     });
-    setSubmit(false)
+    setEmailInput("");
+    setSubmit(false);
   };
 
   return (
@@ -76,7 +80,7 @@ export default function EmailPopup({ close }) {
                 {submit ? (
                   <>
                     <Spinner />
-                    <span>Sending Code</span>
+                    <span className="ml-2">Sending Code</span>
                   </>
                 ) : (
                   "Continue"
@@ -109,7 +113,7 @@ export default function EmailPopup({ close }) {
                 )}
               </button>
             </>
-           )}
+          )}
         </div>
       </div>
     </div>

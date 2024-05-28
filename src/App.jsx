@@ -5,13 +5,13 @@ import VerifyCert from './components/VerifyCert'
 import CreateCert from './components/CreateCert'
 import MintNFT from './components/MintNFT'
 import Navbar from './components/Navbar'
-
+import { polygonAmoy } from 'thirdweb/chains'
 
 function App() {
   return (
     <ThirdwebProvider
       clientId={import.meta.env.VITE_CLIENT_ID}
-      activeChain={'ethereum'}
+      activeChain={polygonAmoy}
       supportedWallets={[embeddedWallet()]}
     >
       <Router>

@@ -12,11 +12,14 @@
   "dependencies": {
     "@thirdweb-dev/react": "^4.6.25",
     "@thirdweb-dev/sdk": "^4.0.86",
+    "ethers": "^6.12.1",
     "lucide-react": "^0.379.0",
+    "magic-sdk": "^28.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "react-spinners": "^0.13.8"
+    "react-spinners": "^0.13.8",
+    "thirdweb": "^5.24.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
