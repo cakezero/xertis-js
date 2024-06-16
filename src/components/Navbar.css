@@ -1,26 +1,21 @@
-.nav-link {
-  position: fixed;
-  top: 4%;
+.navbar {
+  background-color: black;
+  color: white;
   display: flex;
   align-items: center;
-  left: 500px;
+  justify-content: space-around;
+  padding: 30px 25px;
+  margin: auto;
 }
 
-.linkk > a {
-  margin-right: 80px;
-  
-}
-
-.button-right {
-  position: fixed;
-  top: 3%;
-  right: 1%;
-}
-
-.nav-logo {
-  position: fixed;
-  top: 1%;
-  left: 1%;
-  align-items: center;
+.nav-item  {
   display: flex;
+}
+
+.nav-item > li {
+  margin: 5px;
+}
+
+.nav-item > li:hover {
+  color: gray
 }

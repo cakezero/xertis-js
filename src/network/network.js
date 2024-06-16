@@ -1,14 +1,15 @@
 import { env } from "../env/env";
 
-// Change testnet from mumbai to amoy
 const networkConfig = {
   testnet: {
-    rpcUrl: "https://rpc.ankr.com/polygon_mumbai",
-    chainId: 80001,
-    explorerUrl: "https://mumbai.polygonscan.com",
+    rpcUrl: "https://rpc-amoy.polygon.technology",
+    chainId: 80002,
+    explorerUrl: "https://amoy.polygonscan.com",
   },
   mainnet: {
-    rpcUrl: "https://polygon-mainnet.g.alchemy.com/v2/zHEgzvGizW0dHlGJ7J6ZP477wnNlepoF",
+    rpcUrl: `https://polygon-mainnet.g.alchemy.com/v2/${
+      import.meta.env.VITE_ALCHEMY_API_KEY
+    }`,
     chainId: 137,
     explorerUrl: "https://polygonscan.com",
   },

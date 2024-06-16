@@ -1,0 +1,23 @@
+.hero {
+  /* background-image: url('hero-image.jpg'); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 200px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: black;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: black;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}

@@ -1,30 +1,36 @@
-import './App.css'
-import { ThirdwebProvider, embeddedWallet } from '@thirdweb-dev/react'
-import { BrowserRouter as Router, Outlet, Route, Routes } from 'react-router-dom'
-import VerifyCert from './components/VerifyCert'
-import CreateCert from './components/CreateCert'
-import MintNFT from './components/MintNFT'
-import Navbar from './components/Navbar'
-import { polygonAmoy } from 'thirdweb/chains'
+// import {
+//   BrowserRouter as Router,
+//   Outlet,
+//   Route,
+//   Routes,
+// } from "react-router-dom";
+// import VerifyCert from "./components/VerifyCert";
+// import CreateCert from "./components/CreateCert";
+// import MintNFT from "./components/MintNFT";
+import Navbar from "./components/Navbar";
+// import Home from "./components/Home";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import How from "./components/How"
 
 function App() {
   return (
-    <ThirdwebProvider
-      clientId={import.meta.env.VITE_CLIENT_ID}
-      activeChain={polygonAmoy}
-      supportedWallets={[embeddedWallet()]}
-    >
-      <Router>
+    <div>
+      {/* <Router> */}
         <Navbar />
-        <Routes>
-          <Route path="/" element={<MintNFT />} />
+        <Hero />
+        <How />
+        <About />
+        {/* <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mint" element={<MintNFT />} />
           <Route path="/verify" element={<VerifyCert />} />
           <Route path="/create" element={<CreateCert />} />
         </Routes>
         <Outlet />
-      </Router>
-    </ThirdwebProvider>
-  )
+      </Router> */}
+    </div>
+  );
 }
 
-export default App
+export default App;

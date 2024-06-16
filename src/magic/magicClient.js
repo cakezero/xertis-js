@@ -1,17 +1,19 @@
 import { Magic } from "magic-sdk";
 import { getNetworkConfig } from "../network/network";
 
+let client;
 
-export const magicClient = async () => {
-  const apiKey = import.meta.env.VITE_API_KEY;
+export const getMagicClient = async () => {
+  if (client) return client
+  const apiKey = import.meta.env.VITE_MAGIC_KEY;
+  
   if (!apiKey) throw new Error("Magic apiKey needs to be configured");
 
-  const alchemyApiKey = import.meta.env.VITE_ALCHEMY_API_KEY;
-  if (!alchemyApiKey) throw new Error("Alchemy apiKey needs to be configured");
+  const networkConfig = getNetworkConfig();
 
-    const client = new Magic(apiKey, {
-      network: getNetworkConfig(),
-    });
+  client = new Magic(apiKey, {
+    network: networkConfig,
+  });
 
   return client;
 };
